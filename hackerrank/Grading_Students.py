@@ -14,10 +14,6 @@ import sys
 # The function accepts INTEGER_ARRAY grades as parameter.
 #
 
-def round_a(x):
-    return result
-
-
 def gradingStudents(grades):
     result = []
     for grde in grades:
@@ -27,10 +23,7 @@ def gradingStudents(grades):
             next_n = 5
             while next_n < grde:
                 next_n += 5
-
             dif_score = next_n - grde
-            print(dif_score)
-
             if dif_score < 3:
                 result.append(next_n)
             else:
