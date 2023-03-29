@@ -5,6 +5,7 @@ import os
 import random
 import re
 import sys
+import itertools
 
 
 #
@@ -18,16 +19,16 @@ import sys
 #
 
 def birthday(s, d, m):
-    result = 0
+    sum_list = []
 
-    if len(s) < n:
-        return []
+    if m < 1 or m > len(s):
+        return "Invalid input: n must be between 1 and the length of the list."
 
-    result = []
-    for i in range(len(s) - n + 1):
-        result.append(sum(s[i:i + n]))
+    for i in range(len(s) - m + 1):
+        group_sum = sum(s[i:i + m])
+        sum_list.append(group_sum)
 
-    return result
+    return sum_list.count(d)
 
 
 if __name__ == '__main__':
